@@ -10,6 +10,9 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class EmployeFactory extends Factory
 {
+
+    protected $model = Employe::class;
+
     /**
      * Define the model's default state.
      *
@@ -18,7 +21,9 @@ class EmployeFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nom' => $this->faker->lastName(),
+            'prenom' => $this->faker->firstName(),
+            'email' => $this->faker->unique()->safeEmail(),
         ];
     }
 }

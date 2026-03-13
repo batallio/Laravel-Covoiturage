@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Voiture extends Model
 {
 
+    protected $fillable = ['modele', 'nb_places', 'employe_id'];
+
     use HasFactory;
 
     // A car belongs to 1 Employee

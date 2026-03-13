@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Model;
 class Employe extends Model
 {
 
+    protected $fillable = ['nom', 'prenom', 'email'];
+
     use HasFactory;
 
     // 1 Employee owns N Voitures

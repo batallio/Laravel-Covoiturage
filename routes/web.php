@@ -17,7 +17,7 @@ Route::get('/employes', [EmployeController::class, 'index'])->name('employes.ind
 Route::get('/employes/create', [EmployeController::class, 'create'])->name('employes.create');
 Route::post('/employes', [EmployeController::class, 'store'])->name('employes.store');
 Route::get('/employes/{employe}', [EmployeController::class, 'show'])->name('employes.show')
-    ->middleware(\App\Http\Middleware\VerifierVoitureEmploye::class);
+    ->middleware(['verifier.voiture', 'verifier.campus']);
 Route::get('/employes/{employe}/edit', [EmployeController::class, 'edit'])->name('employes.edit');
 Route::put('/employes/{employe}', [EmployeController::class, 'update'])->name('employes.update');
 Route::delete('/employes/{employe}', [EmployeController::class, 'destroy'])->name('employes.destroy');

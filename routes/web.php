@@ -30,7 +30,8 @@ Route::get('vehicules/recherche', [VehiculeController::class, 'rechercherParMode
 Route::get('/vehicules', [VehiculeController::class, 'index'])->name('vehicules.index');
 Route::get('/vehicules/create', [VehiculeController::class, 'create'])->name('vehicules.create');
 Route::post('/vehicules', [VehiculeController::class, 'store'])->name('vehicules.store');
-Route::get('/vehicules/{vehicule}', [VehiculeController::class, 'show'])->name('vehicules.show');
+Route::get('/vehicules/{vehicule}', [VehiculeController::class, 'show'])->name('vehicules.show')
+    ->middleware('verifier.places');
 Route::get('/vehicules/{vehicule}/edit', [VehiculeController::class, 'edit'])->name('vehicules.edit');
 Route::put('/vehicules/{vehicule}', [VehiculeController::class, 'update'])->name('vehicules.update');
 Route::delete('/vehicules/{vehicule}', [VehiculeController::class, 'destroy'])->name('vehicules.destroy');

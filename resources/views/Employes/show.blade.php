@@ -1,6 +1,11 @@
 @extends('layouts.main')
 @section('title', 'Employe')
 @section('content')
+@if(session('error_bus'))
+<div style="color: red;">
+    {{ session('error_bus') }}
+</div>
+@endif
 <h1>Profil employe</h1>
 @include('partials.table-employe', ['employes' => [$employe]])
 <h2>Activite</h2>

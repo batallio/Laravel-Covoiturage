@@ -14,6 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'verifier.voiture' => \App\Http\Middleware\VerifierVoitureEmploye::class,
             'verifier.campus'  => \App\Http\Middleware\VerifierCampusEmploye::class,
+            'verifier.places'  => \App\Http\Middleware\VerifierPlacesVoiture::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

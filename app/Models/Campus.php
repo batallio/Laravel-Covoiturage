@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Campus extends Model
 {
+    protected $fillable = ['description', 'adresse', 'type'];
+
     public function employes()
     {
         return $this->belongsToMany(Employe::class, 'frequentes', 'campus_id', 'employe_id');

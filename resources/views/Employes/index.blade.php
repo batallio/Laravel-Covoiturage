@@ -17,7 +17,7 @@
             <th>{{$employe->nom}}</th>
             <th>{{$employe->prenom}}</th>
             <th>{{$employe->email}}</th>
-            <th>{{$employe->id}}</th>
+            <th><a href="{{ route('employes.show', $employe->id) }}">Voir</a></th>
         </tr>
         @endforeach
     </tbody>

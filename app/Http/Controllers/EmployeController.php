@@ -43,7 +43,8 @@ class EmployeController extends Controller
      */
     public function show(string $id)
     {
-        return Employe::findOrFail($id);
+        $employe = Employe::findOrFail($id);
+        return view('employes.show', compact('employe'));
     }
 
     /**
@@ -75,5 +76,24 @@ class EmployeController extends Controller
     {
         $employe = Employe::findOrFail($id);
         $employe->delete();
+    }
+
+    /**
+     * Verifica si el empleado posee un modelo de coche específico.
+     */
+    public function hasModele(Request $request, Employe $employe)
+    {
+        $request->validate([
+            'modele' => 'required|string|max:255',
+        ]);
+
+        $modeleRecherche = $request->input('modele');
+
+        $possede = $employe->possedeModele($modeleRecherche);
+
+        $resultat = $possede ? 'YES' : 'NO';
+
+        return redirect()->route('employes.show', $employe->id)
+            ->with('resultat', $resultat);
     }
 }

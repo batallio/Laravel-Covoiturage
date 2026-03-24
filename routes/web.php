@@ -10,6 +10,8 @@ Route::get('/', function () {
 
 // Route::resource('employes', EmployeController::class);
 
+Route::post('/employes/{employe}/verifier', [EmployeController::class, 'hasModele'])->name('employes.verifier');
+
 Route::get('/employes', [EmployeController::class, 'index'])->name('employes.index');
 Route::get('/employes/create', [EmployeController::class, 'create'])->name('employes.create');
 Route::post('/employes', [EmployeController::class, 'store'])->name('employes.store');

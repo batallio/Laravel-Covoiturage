@@ -96,4 +96,9 @@ class EmployeController extends Controller
         return redirect()->route('employes.show', $employe->id)
             ->with('resultat', $resultat);
     }
+
+    public function ajouterVoiture(string $id)
+    {
+        return view('employes.ajouter_voiture');
+    }
 }

@@ -42,7 +42,8 @@ class VehiculeController extends Controller
      */
     public function show(string $id)
     {
-        return Voiture::findOrFail($id);
+        $voiture = Voiture::findOrFail($id);
+        return view('voitures.show', compact('voiture'));
     }
 
     /**

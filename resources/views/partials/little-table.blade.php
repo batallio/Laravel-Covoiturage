@@ -1,0 +1,16 @@
+<table>
+    <thead>
+        <tr>
+            <td>
+                {{$theadContent}}
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                {{$tbodyContent}}
+            </td>
+        </tr>
+    </tbody>
+</table>
